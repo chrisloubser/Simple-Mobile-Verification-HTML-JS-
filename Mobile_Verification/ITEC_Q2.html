@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>JavaScript Regular Expressions</title>
+    <H1>Verify a mobile number</H1>
+</head>
+
+<body>
+
+    <p>Verify a South African mbile number and then click "Check"</p>
+    <p>The expected format is like ### ### ####, for example: 083-367-2947</p>
+    <input type="text" id="inputs" name="inputs" />
+    <button type="button" id="check" onclick="verify()">Check</button>
+
+</body>
+
+</html>
+
+<script>
+    function verify() {
+        var inputtxt = document.getElementById(inputs);
+        var structure = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+        if ((inputtxt.value.match(structure))
+            {
+            alert("This is a valid number");
+        } else {
+            alert("Not a valid number");
+        }
+    }
+</script>
